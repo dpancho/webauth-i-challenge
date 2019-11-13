@@ -12,9 +12,9 @@ function get(){
 
 async function add(newUser){
   try{
-    [id] = await db('users').insert(newUser, "id") 
-
-    addedUser = await db('users').getById(id)
+    [id] = await db('users').insert(newUser) 
+    console.log('hfgjdkslgf', id )
+    addedUser = await getById(id)
     return addedUser
   }
   catch(error){
